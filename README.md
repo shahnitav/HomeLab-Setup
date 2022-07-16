@@ -106,3 +106,90 @@ For, **'Do you want to revert to HTTP as the webConfigurator protocol? (y/n)' - 
 16. With this we have configured the pfsense VM. Rest of the configuration will be done using the Parrot Machine through the WebConfigurator.
 
 ## Installing and Configuring the IDS - Security Onion
+Security Onion is an open-source IDS, Security Monitoring and Log Management solution. 
+
+You can download Security Onion from - 
+
+[Security Onion Download](https://github.com/Security-Onion-Solutions/securityonion/blob/master/VERIFY_ISO.md)
+
+Follow these steps to install and configure Security Onion for our network - 
+
+1. Open VMWare Workstation and select Typical Installation -> Next
+   
+2. Click on installer disc image file and browse & select the Security Onion ISO file -> Next
+   
+![Security Onion VMWare](./img/securityonion/so_1.png)
+
+3. Choose Linux in Guest Operating System and CentOS 7 64-bit -> Next
+
+![Security Onion VMWare Version](./img/securityonion/so_2.png)
+
+4. Put in SecurityOnion as the VM name -> Next
+
+5. Specify disk size (**minimum 200GB**) make sure to store it as a single file -> Next
+
+![Security Onion Disk Size](./img/securityonion/so_4.png)
+
+6. Click 'Customize Hardware' -> Increase Processor to 2 -> Change memory to 4-32GB (I recommend atleast 8 GB)-> Add 2 Network Adapters and assign them Vmnet4 & Vmnet5
+
+![Security Onion Hardware Customization](./img/securityonion/so_5.png)
+
+7. Click Finish and Bootup the 'SecurityOnion' VM -> Click Enter on the 'Installing Security Onion in basic graphic mode'
+   
+8. After loading, enter 'yes' when you get this prompt.
+
+![Security Onion Warning](./img/securityonion/so_6.png)
+
+9. Set a username and password for the administrator account -> After Security Onion reboots enter those credentials -> Select Yes
+
+![Security Onion Setup](./img/securityonion/so_7.png)
+
+10. Select 'Run the standard Security Onion installation'
+
+11. Select the EVAL option
+
+![Security Onion Install Type](./img/securityonion/so_8.png)
+
+12. Type 'Agree'
+
+13. Select a hostname, I kept the default
+
+14. Use spacebar to select ens33 as the management interface -> Press Enter
+
+![Security Onion Management Interface](./img/securityonion/so_9.png)
+
+15. Select DHCP to set up the the management interface
+
+16. Select 'YES' -> Select 'OK' -> Select 'Standard' for how this manager should be installed. 
+
+17. Select 'Direct' -> After preflight checks, select ens35 as the Monitor Interface
+
+![Security Onion Monitor Interface](./img/securityonion/so_10.png)
+
+18. Select 'Automatic' for the OS patch schedule -> Accept all default values for  Home Network CIDR ranges, Docker IP Range, 
+
+19. Enter Email Address and password for your Email account for Admin account
+
+20. Select 'IP' for access to web interface -> Select 'Yes' for NTP server and accept defaults.
+
+21. Enter '192.168.3.10' when asked for an IP address to access Web Interface
+
+![Security Onion Web Interface IP](./img/securityonion/so_11.png)
+
+22. Take a screenshot of the final settings, **Especially the Web Access IP Address**
+
+![Security Onion Settings](./img/securityonion/so_12.png)
+
+23. You will get this prompt at the end of installation of Security Onion.
+
+![Security Onion Final](./img/securityonion/so_13.png)
+
+24. Next we will access the Security Onion Interface from our VLAN Network which normally the SOC will do. Any machine like Ubuntu or any other flavour in the network will work and you can set it up on your own. I am using Kali as I have it already installed.
+    
+25. After the VM is installed you can get the IP Address of the machine and add it to the Security Onion instance by running the command 
+
+```
+sudo so-allow
+```
+
+Enter your password -> Type 'a' and wait for the process to complete. 
