@@ -193,3 +193,15 @@ sudo so-allow
 ```
 
 Enter your password -> Type 'a' and wait for the process to complete. 
+
+![Security Onion Firewall Access](./img/securityonion/so_14.png)
+
+This will create a firewall rule on Security Onion for the Kali Linux machine that will allow you access to the Web Interface.
+
+26. Go to the Security Onion web interface address on the Kali Machine. You can login in it using the Email ID and Password you provided during the setup. 
+    
+![Security Onion Web Interface Access](./img/securityonion/so_15.png)
+
+27. Your Security Onion is configured. 
+
+
