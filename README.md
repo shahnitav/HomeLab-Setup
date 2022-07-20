@@ -204,4 +204,21 @@ This will create a firewall rule on Security Onion for the Kali Linux machine th
 
 27. Your Security Onion is configured. 
 
+## Configuring Parrot OS Machine
 
+I have used Kali Machines extensively before, but I wanted to try out Parrot OS that is why I will be using a Parrot OS as an attack machine to perform offensive attacks against the Domain Controller (Windows Active Directory) and other machines on the virtual network. You can use the Kali Machine if you like. 
+
+[Parrot OS Download Link](https://www.parrotsec.org/download/)
+
+
+[Parrot OS Installation Guide on VMWare](https://www.parrotsec.org/docs/parrot-on-vmware.html)
+
+After installing the Parrot OS iso as a new VM in VMWare Workstation, before booting it change the Network Adapter to Vmnet2 and its Memory to 4GB. 
+
+![Parrot OS Configuration](./img/parrot/parrot_1.png)
+
+Power on the machine using the credentials during the setup.
+
+The Parrot OS Machine is ready to use.
+
+![Parrot OS](./img/parrot/parrot_2.png)
